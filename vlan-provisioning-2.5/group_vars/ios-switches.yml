@@ -1,0 +1,4 @@
+ansible_connection: network_cli
+ansible_network_os: ios
+ansible_user: iosusername
+ansible_ssh_pass: cisco

@@ -1,0 +1,19 @@
+---
+- hosts: ios-switches
+  vars:
+    vlan_id: 998
+    vlan_name: Ansible_VLAN
+
+  tasks:
+    - name: Provision VLAN
+      ios_vlan:
+        vlan_id: "{{ vlan_id }}"
+        name: "{{ vlan_name }}"
+        state: present
+
+    - name: Show VLAN
+      ios_command:
+        commands: show vlan brief
+      register: show_vlan
+
+    - debug: var=show_vlan.stdout_lines

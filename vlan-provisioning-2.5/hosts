@@ -1,0 +1,5 @@
+[networkdevices:children]
+ios-switches
+
+[ios-switches]
+10.170.200.2
